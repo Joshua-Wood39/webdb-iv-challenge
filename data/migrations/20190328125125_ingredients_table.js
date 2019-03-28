@@ -9,7 +9,11 @@ exports.up = function(knex) {
         .unique();
 
         tbl
-        .string('amount', 128)
+        .float('quantity')
+        .notNullable()
+
+        tbl
+        .string('measurement', 128)
         .notNullable()
 
         tbl
