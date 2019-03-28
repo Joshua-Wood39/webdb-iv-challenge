@@ -11,6 +11,14 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.get('/:id', async (req, res) => {
+    try {
+        const recipes = await Recipes.findShop(req.params.id);
+        res.status(200).json(recipes);
+    } catch (error) {
+        res.status(500).json(error);
+    }
+});
 
 router.post('/', async (req, res) => {
     try {
